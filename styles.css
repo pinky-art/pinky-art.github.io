@@ -107,7 +107,7 @@ input {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.86) 0 36%, rgba(0, 0, 0, 0.44) 57%, rgba(0, 0, 0, 0.02)),
-    url("assets/community-hero.png");
+    url("assets/naya-group-lunge.jpeg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -401,7 +401,7 @@ blockquote p,
 }
 
 .movement .card-image {
-  background-image: linear-gradient(rgba(255, 90, 0, 0.18), rgba(0, 0, 0, 0.08)), url("assets/community-hero.png");
+  background-image: linear-gradient(rgba(231, 70, 5, 0.14), rgba(0, 0, 0, 0.08)), url("assets/naya-group-lunge.jpeg");
 }
 
 .nutrition .card-image {
@@ -414,7 +414,7 @@ blockquote p,
 }
 
 .community .card-image {
-  background-image: linear-gradient(135deg, rgba(0, 102, 84, 0.82), rgba(255, 90, 0, 0.64)), url("assets/community-hero.png");
+  background-image: linear-gradient(135deg, rgba(27, 18, 11, 0.18), rgba(231, 70, 5, 0.34)), url("assets/naya-group-stretch.jpeg");
 }
 
 .card-badge {
@@ -469,6 +469,45 @@ blockquote p,
   font-family: "Segoe UI", Arial, sans-serif;
   font-weight: 700;
   line-height: 1.5;
+}
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr 1.15fr 0.85fr;
+  gap: 12px;
+  padding: 18px clamp(20px, 5vw, 54px);
+  background: #fffaf4;
+}
+
+.photo-strip figure {
+  position: relative;
+  min-height: 280px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.photo-strip figure:hover img {
+  transform: scale(1.04);
+}
+
+.photo-strip figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 8px 10px;
+  background: var(--orange);
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .package-grid,
@@ -584,10 +623,18 @@ blockquote p,
 
 .event-card {
   min-height: 236px;
-  padding: 18px;
+  padding: 0 18px 18px;
   background: white;
   border: 1px solid var(--line);
   box-shadow: 0 12px 28px rgba(21, 21, 21, 0.08);
+}
+
+.event-card img {
+  width: calc(100% + 36px);
+  height: 126px;
+  display: block;
+  margin: 0 -18px 14px;
+  object-fit: cover;
 }
 
 .event-date {
@@ -943,6 +990,7 @@ cite {
 @media (max-width: 1050px) {
   .program-grid,
   .values-band,
+  .photo-strip,
   .event-grid,
   .app-band {
     grid-template-columns: repeat(2, 1fr);
@@ -973,6 +1021,7 @@ cite {
   .mission-grid,
   .program-grid,
   .values-band,
+  .photo-strip,
   .package-grid,
   .events,
   .event-grid,
