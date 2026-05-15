@@ -1,10 +1,10 @@
 :root {
-  --orange: #ff5a00;
-  --orange-dark: #d94400;
-  --ink: #151515;
+  --orange: #e74605;
+  --orange-dark: #d4151c;
+  --ink: #1b120b;
   --charcoal: #202020;
-  --paper: #fff6ec;
-  --cream: #f7eadc;
+  --paper: #f9f0e1;
+  --cream: #fff6ec;
   --line: rgba(21, 21, 21, 0.14);
   --muted: #6d625b;
   --green: #006654;
@@ -49,23 +49,10 @@ input {
   border-bottom: 1px solid var(--line);
 }
 
-.brand {
-  display: grid;
-  line-height: 0.85;
-}
-
-.brand-name {
-  color: var(--orange);
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  font-weight: 900;
-  letter-spacing: 0;
-}
-
-.brand-sub {
-  color: var(--orange-dark);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.35em;
+.brand img {
+  display: block;
+  width: clamp(96px, 14vw, 140px);
+  height: auto;
 }
 
 .nav-links {
@@ -77,7 +64,7 @@ input {
   text-transform: uppercase;
 }
 
-.nav-links a:first-child {
+.nav-links a:nth-child(2) {
   color: var(--orange);
   border-bottom: 2px solid var(--orange);
 }
@@ -299,6 +286,59 @@ h1 span {
   font-weight: 800;
 }
 
+.about-section,
+.corporate-section,
+.team-section {
+  padding: 64px clamp(20px, 5vw, 54px);
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) 1fr;
+  gap: clamp(28px, 6vw, 70px);
+  background: #fffaf4;
+}
+
+.about-copy > p {
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.mission-grid article,
+.team-grid article {
+  padding: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.mission-grid span,
+.team-grid span,
+.package-label {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mission-grid p,
+.team-grid p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .section,
 .events,
 .stories,
@@ -401,6 +441,103 @@ blockquote p,
   color: var(--orange);
   font-size: 1.8rem;
   font-weight: 900;
+}
+
+.values-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--ink);
+  color: white;
+}
+
+.values-band div {
+  min-height: 140px;
+  padding: 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.values-band strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--orange);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.values-band span {
+  color: rgba(255, 255, 255, 0.76);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.package-grid,
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.package-card {
+  display: grid;
+  gap: 16px;
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 34px rgba(21, 21, 21, 0.08);
+}
+
+.package-card h3 {
+  margin: 0;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.package-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.package-card strong {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+
+.package-card a {
+  width: fit-content;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.package-card.is-orange {
+  background: var(--orange);
+  color: white;
+}
+
+.package-card.is-orange .package-label,
+.package-card.is-orange ul {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.package-card.is-orange a {
+  background: white;
+  color: var(--orange);
 }
 
 .phone-preview {
@@ -689,6 +826,19 @@ blockquote p,
   color: var(--green);
 }
 
+.team-section {
+  background: #fffaf4;
+}
+
+.team-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.team-grid h3 {
+  margin: 8px 0;
+  text-transform: uppercase;
+}
+
 .story-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -779,6 +929,12 @@ cite {
   text-transform: uppercase;
 }
 
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .site-footer nav {
   display: flex;
   gap: 22px;
@@ -786,6 +942,7 @@ cite {
 
 @media (max-width: 1050px) {
   .program-grid,
+  .values-band,
   .event-grid,
   .app-band {
     grid-template-columns: repeat(2, 1fr);
@@ -811,12 +968,17 @@ cite {
 
   .hero,
   .stats-strip,
+  .about-section,
   .split-heading,
+  .mission-grid,
   .program-grid,
+  .values-band,
+  .package-grid,
   .events,
   .event-grid,
   .app-band,
   .event-dialog dl,
+  .team-grid,
   .story-grid,
   .join-section,
   .join-form {

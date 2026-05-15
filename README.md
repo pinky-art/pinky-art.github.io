@@ -8,6 +8,8 @@ Static wellness community landing page for NAYA MVMNT.
 - `styles.css` - responsive styling
 - `script.js` - interactions for video, event details, and join form
 - `assets/community-hero.png` - hero and section image asset
+- `assets/naya-logo.svg` - official NAYA MVMNT logo
+- Program details are summarized directly on the page.
 
 ## Publish
 
