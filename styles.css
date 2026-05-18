@@ -401,20 +401,15 @@ blockquote p,
 }
 
 .movement .card-image {
-  background-image: linear-gradient(rgba(231, 70, 5, 0.14), rgba(0, 0, 0, 0.08)), url("assets/naya-flag-white.jpeg");
+  background-image: linear-gradient(rgba(231, 70, 5, 0.14), rgba(0, 0, 0, 0.08)), url("assets/naya-plank-wide.png");
 }
 
 .nutrition .card-image {
-  background:
-    radial-gradient(circle at 28% 42%, #ff5a00 0 9%, transparent 10%),
-    radial-gradient(circle at 52% 45%, #e6c64e 0 10%, transparent 11%),
-    radial-gradient(circle at 68% 30%, #006654 0 8%, transparent 9%),
-    radial-gradient(circle at 65% 68%, #bb2f00 0 12%, transparent 13%),
-    #f1d8bd;
+  background-image: linear-gradient(rgba(231, 70, 5, 0.08), rgba(27, 18, 11, 0.18)), url("assets/naya-drink.png");
 }
 
 .community .card-image {
-  background-image: linear-gradient(135deg, rgba(27, 18, 11, 0.18), rgba(231, 70, 5, 0.34)), url("assets/naya-group-stretch.jpeg");
+  background-image: linear-gradient(135deg, rgba(27, 18, 11, 0.14), rgba(231, 70, 5, 0.26)), url("assets/naya-crowd-wide.png");
 }
 
 .card-badge {
@@ -845,7 +840,7 @@ blockquote p,
   padding: 38px clamp(20px, 5vw, 54px);
   background:
     linear-gradient(90deg, rgba(0, 102, 84, 0.94), rgba(0, 102, 84, 0.78)),
-    url("assets/community-hero.png");
+    url("assets/naya-celebration.png");
   background-size: cover;
   background-position: center;
   color: white;
