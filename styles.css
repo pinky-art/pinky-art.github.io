@@ -341,7 +341,10 @@ h1 span {
 
 .section,
 .events,
+.gallery-section,
+.partner-details,
 .stories,
+.faq-section,
 .join-section {
   padding: 56px clamp(20px, 5vw, 54px);
 }
@@ -498,6 +501,46 @@ blockquote p,
   position: absolute;
   left: 14px;
   bottom: 14px;
+  padding: 8px 10px;
+  background: var(--orange);
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.gallery-section {
+  background: var(--paper);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 230px;
+  gap: 12px;
+}
+
+.gallery-grid figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.gallery-grid figure.wide {
+  grid-column: span 2;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-grid figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
   padding: 8px 10px;
   background: var(--orange);
   color: white;
@@ -887,6 +930,39 @@ blockquote p,
   color: var(--green);
 }
 
+.partner-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  background: #fffaf4;
+}
+
+.partner-details article {
+  min-height: 210px;
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.partner-details span {
+  color: var(--orange);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.partner-details h3 {
+  margin: 18px 0 10px;
+  text-transform: uppercase;
+}
+
+.partner-details p,
+.faq-grid p {
+  color: var(--muted);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
 .team-section {
   background: #fffaf4;
 }
@@ -926,6 +1002,44 @@ cite {
   font-family: "Segoe UI", Arial, sans-serif;
   font-style: normal;
   font-weight: 900;
+}
+
+.faq-section {
+  background: var(--ink);
+  color: white;
+}
+
+.faq-section h2 {
+  color: white;
+}
+
+.faq-section .split-heading p:last-child {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.faq-grid details {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.faq-grid summary {
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.faq-grid p {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .join-section {
@@ -1001,13 +1115,42 @@ cite {
   gap: 22px;
 }
 
+.sticky-contact {
+  position: fixed;
+  z-index: 30;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.sticky-contact a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 12px 26px rgba(27, 18, 11, 0.22);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1050px) {
   .program-grid,
   .values-band,
   .photo-strip,
+  .gallery-grid,
   .event-grid,
   .app-band {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid figure.wide {
+    grid-column: span 1;
   }
 
   .all-events {
@@ -1036,14 +1179,17 @@ cite {
   .program-grid,
   .values-band,
   .photo-strip,
+  .gallery-grid,
   .single-package,
   .package-grid,
   .events,
   .event-grid,
   .app-band,
   .event-dialog dl,
+  .partner-details,
   .team-grid,
   .story-grid,
+  .faq-grid,
   .join-section,
   .join-form {
     grid-template-columns: 1fr;

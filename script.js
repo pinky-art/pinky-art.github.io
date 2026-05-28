@@ -13,9 +13,25 @@ joinForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(joinForm);
   const name = formData.get("name")?.toString().trim();
-  formNote.textContent = name
-    ? `${name}, you are on the list. Welcome to the movement.`
-    : "Add your name and we will get your community invite ready.";
+  const email = formData.get("email")?.toString().trim();
+  const phone = formData.get("phone")?.toString().trim();
+
+  if (!name) {
+    formNote.textContent = "Add your name and we will get your community invite ready.";
+    return;
+  }
+
+  const message = [
+    "Hi NAYA MVMNT, I would like to join the community.",
+    `Name: ${name}`,
+    email ? `Email: ${email}` : "",
+    phone ? `Phone: ${phone}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  formNote.textContent = `${name}, WhatsApp is opening with your message.`;
+  window.open(`https://wa.me/254792501827?text=${encodeURIComponent(message)}`, "_blank", "noopener");
 });
 
 videoButton.addEventListener("click", () => {
